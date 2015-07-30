@@ -1,0 +1,7 @@
+c:\users\doliveira\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\TaskRunner Installation.exe.config
+c:\users\doliveira\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\TaskRunner Installation.exe
+c:\users\doliveira\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\TaskRunner Installation.pdb
+c:\users\doliveira\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\TaskRunner Installation.exe
+c:\users\doliveira\documents\visual studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\TaskRunner Installation.pdb
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\TaskRunner Installation.csprojResolveAssemblyReference.cache
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\TaskRunnerInstall.exe.config
