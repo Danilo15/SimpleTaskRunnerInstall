@@ -20,6 +20,8 @@ namespace TaskRunnerInstall
             Command(string.Format("{0}/rubyinstaller-2.2.2-x64.exe /VERYSILENT", fileToSave),"Instalando RubyGems");
             Command(@"set PATH=%PATH%;C:\Ruby22-x64\bin;","Adicionando RubyGems nas Variaveis de Ambiente");
             Command("gem install sass thor sasslint", "Instalando SASS, Thor e SASSLINT");
+            Console.WriteLine("Digite o path do projeto Web");
+            Command(string.Format("cd {0} && npm install && npm install -g",Console.ReadLine()),"Instalando packages no projeto");
             Console.WriteLine("Abra o Visual Studio 2013 vá em View > Other Windows > Task Runner Explorer\nClique no botao de atualizar e rode a task dev ou dev-build");
             Console.ReadKey();
         }

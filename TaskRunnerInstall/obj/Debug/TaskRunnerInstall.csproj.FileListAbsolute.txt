@@ -3,3 +3,9 @@ C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\Con
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\TaskRunnerInstall.pdb
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\TaskRunnerInstall.exe
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\TaskRunnerInstall.pdb
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe.config
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.exe
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.pdb
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.pdb
+C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.csprojResolveAssemblyReference.cache
