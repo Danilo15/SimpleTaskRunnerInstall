@@ -9,3 +9,9 @@ C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\D
 C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe
 C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.pdb
 C:\Users\DANILO\Documents\GitHub\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.csprojResolveAssemblyReference.cache
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe.config
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.exe
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.pdb
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.pdb
+C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.csprojResolveAssemblyReference.cache

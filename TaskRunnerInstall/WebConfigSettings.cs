@@ -13,7 +13,7 @@ namespace TaskRunnerInstall
         {
             get
             {
-                return ConfigurationSettings.AppSettings["GruntLauncher"].ToString();
+                return ConfigurationManager.AppSettings["GruntLauncher"].ToString();
             }
         }
 
@@ -21,7 +21,7 @@ namespace TaskRunnerInstall
         {
             get
             {
-                return ConfigurationSettings.AppSettings["NodeJS"].ToString();
+                return ConfigurationManager.AppSettings["NodeJS"].ToString();
             }
         }
 
@@ -29,7 +29,7 @@ namespace TaskRunnerInstall
         {
             get
             {
-                return ConfigurationSettings.AppSettings["TaskRunnerExplorer"].ToString();
+                return ConfigurationManager.AppSettings["TaskRunnerExplorer"].ToString();
             }
         }
 
@@ -37,7 +37,7 @@ namespace TaskRunnerInstall
         {
             get
             {
-                return ConfigurationSettings.AppSettings["RubyGems"].ToString();
+                return ConfigurationManager.AppSettings["RubyGems"].ToString();
             }
         }
 
@@ -45,7 +45,7 @@ namespace TaskRunnerInstall
         {
             get
             {
-                return ConfigurationSettings.AppSettings["VSIXInstaller"].ToString();
+                return ConfigurationManager.AppSettings["VSIXInstaller"].ToString();
             }
         }
     }

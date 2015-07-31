@@ -1,11 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 
 namespace TaskRunnerInstall
 {
     internal class Program
     {
-        private static string fileToSave = "C:/Users/{0}/Downloads";
+        private static string folderToSave = "C:/Users/{0}/Downloads";
 
         private static void Main(string[] args)
         {
@@ -14,17 +15,17 @@ namespace TaskRunnerInstall
                    nodeJS = WebConfigSettings.NodeJS.Split('/')[WebConfigSettings.NodeJS.Split('/').Length - 1],
                    rubyGems = WebConfigSettings.RubyGems.Split('/')[WebConfigSettings.RubyGems.Split('/').Length - 1];
 
-            fileToSave = string.Format(fileToSave, Environment.UserName);
+            folderToSave = string.Format(folderToSave, Environment.UserName);
             Download(WebConfigSettings.NodeJS);
-            Command(string.Format("cd {0} && msiexec /qb /i {1}", fileToSave, nodeJS), "Instalando NodeJS");
+            Command(string.Format("cd {0} && msiexec /qb /i {1}", folderToSave, nodeJS), "Instalando NodeJS");
             Command("npm update -g npm", "Atualizando NPM");
             Command("npm install -g grunt-cli grunt gulp", "Instalando grunt-cli, grunt e gulp");
             Download(WebConfigSettings.GruntLauncher);
-            Command(string.Format("\"{1}\" /q {0}/{2}", fileToSave, WebConfigSettings.VSIXInstaller, gruntLauncher), "Instalando Grunt Launcher");
+            Command(string.Format("\"{1}\" /q {0}/{2}", folderToSave, WebConfigSettings.VSIXInstaller, gruntLauncher), "Instalando Grunt Launcher");
             Download(WebConfigSettings.TaskRunnerExplorer);
-            Command(string.Format("\"{1}\" /q {0}/{2}", fileToSave, WebConfigSettings.VSIXInstaller, taskRunnerExplorer), "Instalando Task Runner Explorer");
+            Command(string.Format("\"{1}\" /q {0}/{2}", folderToSave, WebConfigSettings.VSIXInstaller, taskRunnerExplorer), "Instalando Task Runner Explorer");
             Download(WebConfigSettings.RubyGems);
-            Command(string.Format("{0}/{1} /VERYSILENT", fileToSave, rubyGems), "Instalando RubyGems");
+            Command(string.Format("{0}/{1} /VERYSILENT", folderToSave, rubyGems), "Instalando RubyGems");
             Command(@"set PATH=%PATH%;C:\Ruby22-x64\bin;", "Adicionando RubyGems nas Variaveis de Ambiente");
             Command("gem install sass thor sasslint", "Instalando SASS, Thor e SASSLINT");
             Console.WriteLine("Digite o path do projeto Web");
@@ -49,9 +50,15 @@ namespace TaskRunnerInstall
         {
             WebClient webClient = new WebClient();
             string[] splitedLink = linkDownload.Split('/');
-            string nameToSave = fileToSave + "/" + splitedLink[splitedLink.Length - 1];
-            Console.WriteLine("Baixando {0}...", splitedLink[splitedLink.Length - 1]);
-            webClient.DownloadFile(new Uri(linkDownload), nameToSave);
+            string nameToSave = folderToSave + "/" + splitedLink[splitedLink.Length - 1];
+            string nameVerify = string.Format("{0}", nameToSave.Split('/')[nameToSave.Split('/').Length - 1]);
+            var containsFile = Directory.GetFiles(folderToSave, nameVerify, SearchOption.AllDirectories);
+            if(containsFile == null){
+                Console.WriteLine("Baixando {0}...", splitedLink[splitedLink.Length - 1]);
+                webClient.DownloadFile(new Uri(linkDownload), nameToSave);
+            }else{
+                Console.WriteLine("Já contém {0}...", splitedLink[splitedLink.Length - 1]);
+            }
         }
     }
 }
