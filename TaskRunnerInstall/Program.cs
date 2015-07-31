@@ -9,19 +9,26 @@ namespace TaskRunnerInstall
 
         private static void Main(string[] args)
         {
+            string gruntLauncher = WebConfigSettings.GruntLauncher.Split('/')[WebConfigSettings.GruntLauncher.Split('/').Length - 1],
+                   taskRunnerExplorer = WebConfigSettings.TaskRunnerExplorer.Split('/')[WebConfigSettings.TaskRunnerExplorer.Split('/').Length - 1],
+                   nodeJS = WebConfigSettings.NodeJS.Split('/')[WebConfigSettings.NodeJS.Split('/').Length - 1],
+                   rubyGems = WebConfigSettings.RubyGems.Split('/')[WebConfigSettings.RubyGems.Split('/').Length - 1];
+
             fileToSave = string.Format(fileToSave, Environment.UserName);
-            Download("https://nodejs.org/dist/v0.12.7/x64/node-v0.12.7-x64.msi");
-            Command(string.Format("cd {0} && msiexec /qb /i node-v0.12.7-x64.msi", fileToSave),"Instalando NodeJS");
-            Command("npm update -g npm","Atualizando NPM");
+            Download(WebConfigSettings.NodeJS);
+            Command(string.Format("cd {0} && msiexec /qb /i {1}", fileToSave, nodeJS), "Instalando NodeJS");
+            Command("npm update -g npm", "Atualizando NPM");
             Command("npm install -g grunt-cli grunt gulp", "Instalando grunt-cli, grunt e gulp");
-            Download("https://visualstudiogallery.msdn.microsoft.com/dcbc5325-79ef-4b72-960e-0a51ee33a0ff/file/109075/22/Grunt%20Launcher%20v1.7.8.vsix");
-            Download("https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708/file/140636/3/TaskRunnerExplorer.vsix");
-            Download("http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.2-x64.exe");
-            Command(string.Format("{0}/rubyinstaller-2.2.2-x64.exe /VERYSILENT", fileToSave),"Instalando RubyGems");
-            Command(@"set PATH=%PATH%;C:\Ruby22-x64\bin;","Adicionando RubyGems nas Variaveis de Ambiente");
+            Download(WebConfigSettings.GruntLauncher);
+            Command(string.Format("\"{1}\" /q {0}/{2}", fileToSave, WebConfigSettings.VSIXInstaller, gruntLauncher), "Instalando Grunt Launcher");
+            Download(WebConfigSettings.TaskRunnerExplorer);
+            Command(string.Format("\"{1}\" /q {0}/{2}", fileToSave, WebConfigSettings.VSIXInstaller, taskRunnerExplorer), "Instalando Task Runner Explorer");
+            Download(WebConfigSettings.RubyGems);
+            Command(string.Format("{0}/{1} /VERYSILENT", fileToSave, rubyGems), "Instalando RubyGems");
+            Command(@"set PATH=%PATH%;C:\Ruby22-x64\bin;", "Adicionando RubyGems nas Variaveis de Ambiente");
             Command("gem install sass thor sasslint", "Instalando SASS, Thor e SASSLINT");
             Console.WriteLine("Digite o path do projeto Web");
-            Command(string.Format("cd {0} && npm install && npm install -g",Console.ReadLine()),"Instalando packages no projeto");
+            Command(string.Format("cd {0} && npm install && npm install -g", Console.ReadLine()), "Instalando packages no projeto");
             Console.WriteLine("Abra o Visual Studio 2013 vá em View > Other Windows > Task Runner Explorer\nClique no botao de atualizar e rode a task dev ou dev-build");
             Console.ReadKey();
         }
