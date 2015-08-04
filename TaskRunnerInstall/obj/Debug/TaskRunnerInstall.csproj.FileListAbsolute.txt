@@ -14,4 +14,3 @@ C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.pdb
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.exe
 C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\bin\Debug\TaskRunnerInstall.pdb
-C:\Users\doliveira\Documents\Visual Studio 2013\Projects\SimpleTaskRunnerInstall\TaskRunnerInstall\obj\Debug\TaskRunnerInstall.csprojResolveAssemblyReference.cache

@@ -40,11 +40,11 @@ namespace TaskRunnerInstall
             if (!GetInstalledPrograms(description))
             {
                 Console.WriteLine("Instalando {0}", description);
-                Command(command, description);
+                Command(command, description,true);
             }
         }
 
-        private static void Command(string command, string description)
+        private static void Command(string command, string description, bool esperarParaSair = false)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -52,8 +52,11 @@ namespace TaskRunnerInstall
             startInfo.FileName = "cmd.exe";
             startInfo.Arguments = "/c " + command;
             process.StartInfo = startInfo;
-            Console.WriteLine(description);
-            process.Start();
+            process.Start(); 
+            if (esperarParaSair)
+            {
+                process.WaitForExit();
+            }
         }
 
         private static void Download(string linkDownload)
@@ -63,7 +66,7 @@ namespace TaskRunnerInstall
             string nameToSave = folderToSave + "/" + splitedLink[splitedLink.Length - 1];
             string nameVerify = string.Format("{0}", nameToSave.Split('/')[nameToSave.Split('/').Length - 1]);
             var containsFile = Directory.GetFiles(folderToSave, nameVerify, SearchOption.AllDirectories);
-            if (containsFile == null)
+            if (containsFile == null || containsFile.Length < 1)
             {
                 Console.WriteLine("Baixando {0}...", splitedLink[splitedLink.Length - 1]);
                 webClient.DownloadFile(new Uri(linkDownload), nameToSave);
